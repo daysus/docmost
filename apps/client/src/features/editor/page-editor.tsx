@@ -314,6 +314,10 @@ function CollabPageEditor({
         scrollMargin: 80,
         attributes: {
           "aria-label": t("Page content"),
+          // Browser spellcheck is tied to the UI language, so multilingual
+          // authors get a wall of red underlines. Turn it off on the document
+          // surface; the browser can still spellcheck other inputs.
+          spellcheck: "false",
         },
         handleDOMEvents: {
           keydown: (_view, event) => {

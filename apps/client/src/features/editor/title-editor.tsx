@@ -96,6 +96,9 @@ export function TitleEditor({
     editorProps: {
       attributes: {
         "aria-label": t("Page title"),
+        // Match the page content surface: the browser spellcheck follows the
+        // UI language and marks multilingual titles as misspelled.
+        spellcheck: "false",
       },
       handleDOMEvents: {
         keydown: (_view, event) => {
